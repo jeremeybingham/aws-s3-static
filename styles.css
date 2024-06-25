@@ -1,0 +1,227 @@
+/* Variables for defaults */
+:root {
+    --font-primary: system-ui, "Segoe UI", Roboto, Ubuntu, "Open Sans", "Helvetica Neue", sans-serif;
+    --purple-light: #cfbfff;
+    --purple-dark: #584d92;
+    --teal-light: #9ae2f9;
+    --teal-dark: #406164;
+    --orange-light: #feaa80;
+    --orange-dark: #91442e;
+    --yellow-light: #e0ee74;
+    --yellow-dark: #625f2d;
+    --gold-light: #fee886;
+    --gold-dark: #9f7d33;
+    --pink-light: #dd759a;
+    --pink-dark: #6c364d;
+    --blue-light: #29407f;
+    --blue-dark: #151e2d;
+    --light-grey: #DCE2E8;
+    --white: #ffffff;
+    --black: #000000;
+
+    /* Defaults include night mode */
+    --bg-color: var(--blue-dark);
+    --text-color: var(--white);
+    --h1-color: var(--teal-light);
+    --h2-color: var(--pink-light);
+    --h3-color: var(--teal-light);
+    --a-color: var(--yellow-light);
+    --a-visited-color: var(--purple-light);
+    --a-hover-color: var(--pink-light);
+    --footer-color: var(--yellow-light);
+    --city-dates-color: var(--yellow-light);
+    --ul-skills-border: var(--yellow-light);
+    --ul-skills-color: var(--pink-light);
+    --ul-skills-background: transparent;
+}
+
+/* Variables for day mode */
+.day-mode {
+    --bg-color: var(--light-grey);
+    --text-color: var(--black);
+    --h1-color: var(--blue-dark);
+    --h2-color: var(--blue-dark);
+    --h3-color: var(--blue-light);
+    --a-color: var(--blue-light);
+    --a-visited-color: var(--purple-dark);
+    --a-hover-color: var(--orange-light);
+    --footer-color: var(--blue-light);
+    --city-dates-color: var(--pink-light);
+    --ul-skills-border: var(--teal-light);
+    --ul-skills-color: var(--blue-dark);
+    --ul-skills-background: var(--teal-light);
+}
+
+/* Base classes */
+html {
+    background-color: var(--bg-color);
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    line-height: 1.15;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    padding: 0;
+}
+
+body {
+    padding: 1rem;
+    max-width: 85ch;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--h1-color);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--h2-color);
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--h3-color);
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--a-color);
+}
+
+a:visited {
+    color: var(--a-visited-color);
+}
+
+a:hover {
+    color: var(--a-hover-color);
+}
+
+.footer {
+    margin-top: 1.75rem;
+    text-align: center;
+    font-style: italic;
+    color: var(--footer-color);
+}
+
+.city_dates {
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: -0.5rem;
+    color: var(--city-dates-color);
+}
+
+/* Skills list */
+#ul_skills {
+    list-style: none;
+    padding: 0;
+    margin: 0.25rem 0.25rem;
+}
+
+#ul_skills li {
+    display: inline-block;
+    margin-right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    color: var(--ul-skills-color);
+    font-weight: 500;
+    border: 1px solid var(--ul-skills-border);
+    border-radius: 5px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    background: var(--ul-skills-background);
+}
+
+#ul_skills li:last-child {
+    margin-right: 0;
+}
+
+h3+p {
+    margin-top: -0.75rem;
+}
+
+.city+ul {
+    margin-top: -0.25rem;
+}
+
+/* Toggle switch styles */
+.toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    margin: 1rem 0;
+}
+
+.toggle-switch label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue-light);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.toggle-switch input {
+    position: absolute;
+    display: none;
+}
+
+.toggle-switch .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.toggle-switch input:checked~.slider {
+    background-color: var(--teal-light);
+    color: var(--teal-light);
+    box-shadow: none;
+}
+
+.toggle-switch .slider::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: inset 10px -2px 0px 0px var(--gold-light);
+    background-color: var(--blue-light);
+    transition: 0.3s;
+}
+
+.toggle-switch input:checked~.slider::before {
+    transform: translateX(30px);
+    background-color: var(--gold-light);
+    color: var(--white);
+    box-shadow: none;
+}
+
+/* Styles for the footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.footer {
+    margin: 0;
+}
